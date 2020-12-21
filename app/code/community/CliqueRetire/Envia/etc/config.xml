@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<config>
+  <modules>
+    <CliqueRetire_Envia>
+      <version>1.0</version>
+    </CliqueRetire_Envia>
+  </modules>
+  <global>
+    <blocks>
+      <cliqueretire_envia>
+        <class>CliqueRetire_Envia_Block</class>
+      </cliqueretire_envia>
+    </blocks>
+    <models>
+      <cliqueretire_envia>
+        <class>CliqueRetire_Envia_Model</class>
+      </cliqueretire_envia>
+    </models>
+    <helpers>
+      <cliqueretire_envia>
+        <class>CliqueRetire_Envia_Helper</class>
+      </cliqueretire_envia>
+    </helpers>
+  </global>
+  <frontend>
+    <events>
+      <core_block_abstract_to_html_after>
+        <observers>
+          <cliqueretire_envia_block_abstract_to_html_after>
+            <class>cliqueretire_envia/observer</class>
+            <method>core_block_abstract_to_html_after</method>
+          </cliqueretire_envia_block_abstract_to_html_after>
+        </observers>
+      </core_block_abstract_to_html_after>
+      <checkout_submit_all_after>
+        <observers>
+          <send_shipping_to_cr_after_finalize>
+            <class>cliqueretire_envia/observer</class>
+            <method>send_shipping_to_cr_after_finalize</method>
+          </send_shipping_to_cr_after_finalize>
+        </observers>
+      </checkout_submit_all_after>
+    </events>
+    <routers>
+      <cliqueretire_envia>
+        <use>standard</use>
+        <args>
+          <module>CliqueRetire_Envia</module>
+          <frontName>cliqueretire_envia</frontName>
+        </args>
+      </cliqueretire_envia>
+    </routers>
+  </frontend>
+  <default>
+    <carriers>
+      <cliqueretire_envia>
+        <active>1</active>
+        <sallowspecific>0</sallowspecific>
+        <model>cliqueretire_envia/demo</model>
+        <name>Clique Retire</name>
+        <price>10</price>
+        <title>Receba fora de casa</title>
+      </cliqueretire_envia>
+    </carriers>
+  </default>
+</config>
