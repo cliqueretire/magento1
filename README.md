@@ -1,5 +1,5 @@
 ## Release
-[![GitHub Release](https://img.shields.io/github/release/tterb/PlayMusic.svg?style=flat)]() 
+[![GitHub Release](https://badgen.net/github/release/cliqueretire/magento1)]() 
 
 ### Pré Requisitos
 
